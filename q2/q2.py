@@ -29,12 +29,19 @@ def pad_line(string_to_pad, width):
   Returns:
     A string padded to the appropriate length.
   """
+  # Handles the case where the string is already at the appropriate length.
   if len(string_to_pad) >= width:
     return string_to_pad
 
+  # I perform a list conversion so I can easily insert elements at an
+  # arbitrary point.
   string_to_pad = list(string_to_pad)
   spaces = find_spaces(string_to_pad)
+
+  # The space offset keeps track of how the list might grow.
   space_offset = 0
+
+  # I admit this isn't the most elegant implementation.
   while len(string_to_pad) < width:
     for space in spaces:
       if len(string_to_pad) < width:
@@ -57,17 +64,17 @@ def justify_string(width, string_to_justify):
   Returns:
     A list of each justified line as a different element in the array.
   """
+  # Handles the case where the string does not need justification.
   if len(string_to_justify) < width:
     return string_to_justify
 
   output = list()
   lines_to_process = textwrap.wrap(string_to_justify, width)
   for i, line in enumerate(lines_to_process):
+    # The -1 is because len() returns a non-zero padded string length which
+    # can result in IndexErrors.
     if i < len(lines_to_process) - 1:
       output.append(pad_line(line, width))
     else:
       output.append(line)
-  print output
   return output
-
-

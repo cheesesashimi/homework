@@ -29,6 +29,8 @@ class Tests(unittest.TestCase):
   def test_no_leading_spaces(self):
     """Tests that leading spaces are removed."""
     output = q4.reduce_string(' asdfqwer')
+    # The -1 is the exit condition of the .find() method if that substring
+    # is not found.
     self.assertEquals(-1, output.find(' '))
 
   def test_no_trailing_spaces(self):
