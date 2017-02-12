@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import unittest
-import q2
+from homework import question2
 
 LOREM_IPSUM = ('Lorem ipsum dolor sit amet, dicit graeco electram in vis,' 
                ' minimum accusam omnesque has te. Purto equidem an pri, veniam' 
@@ -23,7 +23,7 @@ class Tests(unittest.TestCase):
     expected_output = ['The  quick brown fox',
                        'jumps  over the lazy',
                        'dog.']
-    output = q2.justify_string(20, input)
+    output = question2.justify_string(20, input)
     self.assertEquals(output, expected_output)
 
   def test_string_less_than_width(self):
@@ -31,7 +31,7 @@ class Tests(unittest.TestCase):
     """
     input = RACKSPACE_STRING
     expected_output = RACKSPACE_STRING
-    output = q2.justify_string(80, input)
+    output = question2.justify_string(80, input)
     self.assertEquals(output, expected_output)
 
   def test_find_spaces(self):
@@ -39,7 +39,7 @@ class Tests(unittest.TestCase):
     """
     input = RACKSPACE_STRING
     expected_output = [3, 9, 15, 19, 25, 30, 34, 39]
-    output = q2.find_spaces(input)
+    output = question2.find_spaces(input)
     self.assertEquals(output, expected_output)
 
   def test_pad_line(self):
@@ -47,7 +47,7 @@ class Tests(unittest.TestCase):
     """
     input = 'The  quick brown fox'
     expected_output = 'The  quick brown fox'
-    output = q2.pad_line(input, 20)
+    output = question2.pad_line(input, 20)
     self.assertEquals(output, expected_output)
 
   def test_longer_string(self):
@@ -70,7 +70,7 @@ class Tests(unittest.TestCase):
                        'Melea        labitur',
                        'albucius,   ei  alii',
                        'possit qui.']
-    output = q2.justify_string(20, input)
+    output = question2.justify_string(20, input)
     self.assertEquals(output, expected_output)
 
 
