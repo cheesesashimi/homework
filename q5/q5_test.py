@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import unittest
-import q5
+from q5 import q5
 
 
 class Tests(unittest.TestCase):

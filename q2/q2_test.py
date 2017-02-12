@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import unittest
-import q2
+from q2 import q2
 
 LOREM_IPSUM = ('Lorem ipsum dolor sit amet, dicit graeco electram in vis,' 
                ' minimum accusam omnesque has te. Purto equidem an pri, veniam' 
